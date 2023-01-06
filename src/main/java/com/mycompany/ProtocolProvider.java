@@ -11,8 +11,7 @@ public class ProtocolProvider implements ValueProvider{
 
 	@Override
 	public Set<Value> resolve() throws ValueResolvingException {
-		// TODO Auto-generated method stub
-		return ValueBuilder.getValuesFor("HTTP","HTTPS");
+		return ValueBuilder.getValuesFor("HTTP", "HTTPS");
 	}
 
 }

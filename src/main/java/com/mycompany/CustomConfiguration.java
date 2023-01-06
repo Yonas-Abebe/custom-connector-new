@@ -1,12 +1,12 @@
 package com.mycompany;
 
 import org.mule.runtime.extension.api.annotation.Operations;
-import org.mule.runtime.extension.api.annotation.connectivity.ConnectionProviders;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
 import org.mule.runtime.extension.api.annotation.values.OfValues;
+
 @Operations(CustomOperations.class)
-@ConnectionProviders(CustomConnectionProvider.class)
 public class CustomConfiguration {
+	
 	@Parameter
 	@OfValues(ProtocolProvider.class)
 	private String protocol;
@@ -14,6 +14,8 @@ public class CustomConfiguration {
 	private String host;
 	@Parameter
 	private String basepath;
+	
+	
 	public String getProtocol() {
 		return protocol;
 	}
@@ -31,5 +33,8 @@ public class CustomConfiguration {
 	}
 	public void setBasepath(String basepath) {
 		this.basepath = basepath;
-	}	
+	}
+	
+	
+
 }

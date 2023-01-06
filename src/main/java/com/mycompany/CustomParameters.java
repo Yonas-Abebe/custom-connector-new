@@ -8,36 +8,60 @@ import org.mule.runtime.extension.api.annotation.param.Optional;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
 
 public class CustomParameters {
+	
 	@Parameter
 	@Expression(ExpressionSupport.SUPPORTED)
-	@Optional(defaultValue = "Developer")
-	private String job;
+	@Optional(defaultValue = "#['']")
+	private String appname;
+	
 	@Parameter
 	@Expression(ExpressionSupport.SUPPORTED)
-	@Optional(defaultValue = "Vishwas")
-	private String firstName;
+	@Optional(defaultValue = "#['']")
+	private String env;
+	
+	@Parameter
+	@Expression(ExpressionSupport.SUPPORTED)
+	@Optional(defaultValue = "#['']")
+	private String appvalue;
+	
 	@Parameter
 	@Expression(ExpressionSupport.SUPPORTED)
 	@Optional(defaultValue = "#[{}]")
-	private Map<String,String> additionalData;
+	private Map<String, String> additionalData;
+
+	public String getAppname() {
+		return appname;
+	}
+
+	public void setAppname(String appname) {
+		this.appname = appname;
+	}
+
+	public String getEnv() {
+		return env;
+	}
+
+	public void setEnv(String env) {
+		this.env = env;
+	}
 	
-	public String getFirstName() {
-		return firstName;
+	public String getappvalue() {
+		return appvalue;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+
+	
+	public void setappvalue(String env) {
+		this.appvalue = appvalue;
 	}
-	public String getJob() {
-		return job;
-	}
-	public void setJob(String job) {
-		this.job = job;
-	}
+
 	public Map<String, String> getAdditionalData() {
 		return additionalData;
 	}
+
 	public void setAdditionalData(Map<String, String> additionalData) {
 		this.additionalData = additionalData;
 	}
+	
+	
 
 }

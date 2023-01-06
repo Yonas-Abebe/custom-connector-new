@@ -1,14 +1,13 @@
 package com.mycompany;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-
-import javax.net.ssl.HttpsURLConnection;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CustomConnection {
 	
@@ -27,6 +26,7 @@ public class CustomConnection {
 	    try {
 	    	connection = new URL(urlProtocol + host + basepath).openConnection();
 	    	LOGGER.info("Connection created successfully "+ urlProtocol + host + basepath);
+	    	System.out.println("Connection created successfully "+ urlProtocol + host + basepath);
 	    }
 	    catch(IOException e) {
 	    	LOGGER.error("Error occurred while creating connetion");
